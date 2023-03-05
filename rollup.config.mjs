@@ -2,8 +2,14 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
+import autoprefixer from 'autoprefixer'
+import tailwindcss from 'tailwindcss'
+
 
 import packageJson from "./package.json" assert {type: "json"}
+import postcss from "postcss";
+
+const tailwindConfig = require('./tailwind.config.js')
 
 export default [
     {
@@ -14,7 +20,11 @@ export default [
         plugins: [
             resolve(),
             commonjs(),
-            typescript({ tsconfig: "./tsconfig.json" })
+            typescript({ tsconfig: "./tsconfig.json" }),
+            postcss({
+                extensions: ['.css', '.module.css'],
+                plugins: [autoprefixer(), tailwindcss(tailwindConfig)],
+            }),
         ]
     },
     {
