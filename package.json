@@ -1,0 +1,16 @@
+{
+  "name": "mecompo",
+  "version": "1.0.0",
+  "description": "A ui component library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ui",
+    "me",
+    "MeCompo"
+  ],
+  "author": "Sagar Dwivedi",
+  "license": "ISC"
+}
