@@ -2809,7 +2809,7 @@ function requireReact_development () {
 var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
 const Button = ({ label }) => {
-    return React.createElement("button", null, label);
+    return React.createElement("button", { className: "bg-blue-500" }, label);
 };
 
 export { Button };
